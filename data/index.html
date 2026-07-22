@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Farming Dashboard</h1>
+            <p>Sistem Monitoring Tanaman</p>
+        </header>
+
+        <main>
+            <section class="charts-section">
+                <div class="chart-card">
+                    <h2>Suhu Udara (DHT21)</h2>
+                    <canvas id="chartSensor1"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Kelembaban Udara (DHT21)</h2>
+                    <canvas id="chartSensor2"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Kelembaban Tanah</h2>
+                    <canvas id="chartSensor3"></canvas>
+                </div>
+            </section>
+
+            <section class="actuators-section">
+                <div class="actuator-card">
+                    <h2>Pompa</h2>
+                    <div class="status" id="status1">Status: OFF</div>
+                    <button id="btnAct1" class="btn btn-off" onclick="toggleActuator(1)">Nyalakan Pompa</button>
+                </div>
+                <div class="actuator-card">
+                    <h2>Kipas</h2>
+                    <div class="status" id="status2">Status: OFF</div>
+                    <button id="btnAct2" class="btn btn-off" onclick="toggleActuator(2)">Nyalakan Kipas</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

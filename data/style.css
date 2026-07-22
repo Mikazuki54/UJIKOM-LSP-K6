@@ -1,0 +1,120 @@
+/* Reset dasar untuk seluruh elemen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f4f3; /* Warna latar sedikit kehijauan yang lembut */
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Bagian Header / Judul */
+header {
+    background-color: #2e7d32; /* Warna hijau alam untuk tema Smart Farming */
+    color: white;
+    padding: 25px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #c8e6c9;
+}
+
+/* Bagian Grafik */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Kartu untuk Grafik dan Aktuator */
+.chart-card, .actuator-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+    border-top: 4px solid #4caf50; /* Aksen hijau di atas kartu */
+}
+
+.chart-card h2, .actuator-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Bagian Aktuator (Pompa & Kipas) */
+.actuators-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.actuator-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.status {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Desain Tombol */
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: scale(0.98); /* Efek tombol ditekan */
+}
+
+/* Warna saat tombol ON (Menyala) */
+.btn-on { 
+    background-color: #27ae60; 
+}
+
+.btn-on:hover {
+    background-color: #219653;
+}
+
+/* Warna saat tombol OFF (Mati) */
+.btn-off { 
+    background-color: #e74c3c; 
+}
+
+.btn-off:hover {
+    background-color: #c0392b;
+}
