@@ -1,4 +1,3 @@
-/* Reset dasar untuk seluruh elemen */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,8 +6,8 @@
 }
 
 body {
-    background-color: #f0f4f3; /* Warna latar sedikit kehijauan yang lembut */
-    color: #333;
+    background-color: #e8f5e9; /* Hijau sangat muda (warna latar) */
+    color: #2e3d32;
     padding: 20px;
 }
 
@@ -17,104 +16,127 @@ body {
     margin: 0 auto;
 }
 
-/* Bagian Header / Judul */
+/* Header Tema Agroteknologi */
 header {
-    background-color: #2e7d32; /* Warna hijau alam untuk tema Smart Farming */
+    background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
     color: white;
-    padding: 25px 20px;
-    border-radius: 8px;
-    margin-bottom: 25px;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 15px rgba(46, 125, 50, 0.2);
+    border-bottom: 5px solid #8d6e63; /* Aksen coklat tanah */
 }
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+header h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 8px; 
+    letter-spacing: 1px;
 }
 
-header p {
-    font-size: 1rem;
-    color: #c8e6c9;
+header h1 span {
+    color: #aed581; /* Hijau pucat untuk penekanan */
 }
 
-/* Bagian Grafik */
+header p { 
+    font-size: 1.1rem; 
+    color: #e8f5e9; 
+}
+
+.section-title h2 {
+    font-size: 1.5rem;
+    color: #1b5e20;
+    margin-bottom: 15px;
+    border-left: 5px solid #4caf50;
+    padding-left: 10px;
+}
+
+/* Tata Letak Kartu */
 .charts-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
 
-/* Kartu untuk Grafik dan Aktuator */
-.chart-card, .actuator-card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    text-align: center;
-    border-top: 4px solid #4caf50; /* Aksen hijau di atas kartu */
-}
-
-.chart-card h2, .actuator-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-/* Bagian Aktuator (Pompa & Kipas) */
 .actuators-section {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    gap: 25px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.chart-card h3 {
+    color: #388e3c;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.current-val {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 15px;
 }
 
 .actuator-card {
     flex: 1;
-    min-width: 250px;
+    min-width: 280px;
     max-width: 400px;
+    text-align: center;
+    border-top: 4px solid #8d6e63;
+}
+
+.actuator-card h3 {
+    font-size: 1.3rem;
+    color: #4e342e;
+    margin-bottom: 10px;
 }
 
 .status {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #555;
+    color: #666;
 }
 
 /* Desain Tombol */
 .btn {
-    padding: 12px 20px;
+    padding: 14px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.btn:active {
-    transform: scale(0.98); /* Efek tombol ditekan */
-}
+.btn-on { background-color: #43a047; box-shadow: 0 4px 10px rgba(67, 160, 71, 0.3); }
+.btn-on:hover { background-color: #2e7d32; }
+.btn-off { background-color: #e53935; box-shadow: 0 4px 10px rgba(229, 57, 53, 0.3); }
+.btn-off:hover { background-color: #c62828; }
 
-/* Warna saat tombol ON (Menyala) */
-.btn-on { 
-    background-color: #27ae60; 
-}
-
-.btn-on:hover {
-    background-color: #219653;
-}
-
-/* Warna saat tombol OFF (Mati) */
-.btn-off { 
-    background-color: #e74c3c; 
-}
-
-.btn-off:hover {
-    background-color: #c0392b;
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #757575;
+    font-size: 0.9rem;
+    border-top: 1px solid #c8e6c9;
 }

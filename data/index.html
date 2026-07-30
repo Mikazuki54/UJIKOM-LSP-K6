@@ -3,47 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Farming Dashboard</title>
+    <title>Sistem Monitoring</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Memuat Library Chart.js untuk Grafik -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Smart Farming Dashboard</h1>
-            <p>Sistem Monitoring Tanaman</p>
+            <div class="header-titles">
+                <h1>Smart Agroteknologi</h1>
+                <p>Sistem Monitoring Pertanian Cerdas & Kendali Irigasi Otomatis</p>
+            </div>
         </header>
 
         <main>
+            <!-- Bagian Monitoring Grafik -->
+            <section class="section-title">
+                <h2>📈 Grafik Pemantauan Real-Time</h2>
+            </section>
+            
             <section class="charts-section">
-                <div class="chart-card">
-                    <h2>Suhu Udara (DHT21)</h2>
-                    <canvas id="chartSensor1"></canvas>
+                <div class="card chart-card">
+                    <h3>Suhu Udara (°C)</h3>
+                    <div class="current-val">Saat ini: <span id="txtSuhu">--</span> °C</div>
+                    <canvas id="chartSuhu"></canvas>
                 </div>
-                <div class="chart-card">
-                    <h2>Kelembaban Udara (DHT21)</h2>
-                    <canvas id="chartSensor2"></canvas>
+                <div class="card chart-card">
+                    <h3>Kelembapan Udara (%)</h3>
+                    <div class="current-val">Saat ini: <span id="txtHum">--</span> %</div>
+                    <canvas id="chartHum"></canvas>
                 </div>
-                <div class="chart-card">
-                    <h2>Kelembaban Tanah</h2>
-                    <canvas id="chartSensor3"></canvas>
+                <div class="card chart-card">
+                    <h3>Kelembapan Tanah (%)</h3>
+                    <div class="current-val">Saat ini: <span id="txtSoil">--</span> %</div>
+                    <canvas id="chartSoil"></canvas>
                 </div>
             </section>
 
+            <!-- Bagian Kendali Aktuator -->
+            <section class="section-title">
+                <h2>⚙️ Panel Kendali Aktuator</h2>
+            </section>
+
             <section class="actuators-section">
-                <div class="actuator-card">
-                    <h2>Pompa</h2>
-                    <div class="status" id="status1">Status: OFF</div>
-                    <button id="btnAct1" class="btn btn-off" onclick="toggleActuator(1)">Nyalakan Pompa</button>
+                <div class="card actuator-card">
+                    <h3>Kipas</h3>
+                    <div class="status" id="statusFan">Status: OFF</div>
+                    <button id="btnFan" class="btn btn-off" onclick="toggleFan()">Nyalakan Kipas</button>
                 </div>
-                <div class="actuator-card">
-                    <h2>Kipas</h2>
-                    <div class="status" id="status2">Status: OFF</div>
-                    <button id="btnAct2" class="btn btn-off" onclick="toggleActuator(2)">Nyalakan Kipas</button>
+                <div class="card actuator-card">
+                    <h3>Pompa</h3>
+                    <div class="status" id="statusPump">Status: OFF</div>
+                    <button id="btnPump" class="btn btn-off" onclick="togglePump()">Nyalakan Pompa</button>
                 </div>
             </section>
         </main>
+        
+        <footer>
+            <p>Sistem IoT Agroteknologi Berbasis ESP32 & Local Network</p>
+        </footer>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
