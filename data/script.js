@@ -1,5 +1,5 @@
 // ================= KONFIGURASI =================
-const ESP_IP = "http://192.168.1.100"; // GANTI DENGAN IP ESP32 ANDA
+const ESP_IP = ""; // GANTI DENGAN IP ESP32 ANDA
 const maxDataPoints = 15; // Jumlah titik data maksimum di grafik
 // ===============================================
 

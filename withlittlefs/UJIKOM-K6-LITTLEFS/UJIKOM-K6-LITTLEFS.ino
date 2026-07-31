@@ -12,9 +12,9 @@
 const char* ssid = "UGMURO-IoT";
 const char* password = "Esteh5000";
 
-const char* thingSpeakApiKey = "KTTMCKCZAD4NP9VK"; // Ganti dengan API Key ThingSpeak
+const char* thingSpeakApiKey = ""; // Ganti dengan API Key ThingSpeak
 const char* thingSpeakUrl = "http://api.thingspeak.com/update";
-const unsigned long channelID = 3086287;
+const unsigned long channelID = xxxxxxx; // masukkan channelID Thingspeak
 
 // ---- KONFIGURASI PIN & OBJEK ----
 #define DHTPIN 4
@@ -39,7 +39,6 @@ void setup() {
   lcd.backlight();
   lcd.setCursor(3, 0); lcd.print("Selamat Datang!");
   lcd.setCursor(0, 1); lcd.print("Agroteknologi IoT");
-  lcd.setCursor(3, 3); lcd.print("-- UG MURO --");
   delay(5000); lcd.clear(); delay(2000);
 
   pinMode(soilPin, INPUT);
