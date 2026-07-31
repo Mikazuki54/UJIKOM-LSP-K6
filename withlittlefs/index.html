@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Memuat Library Chart.js untuk Grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-titles">
+                <h1>Smart Agroteknologi</h1>
+                <p>Sistem Monitoring Pertanian Cerdas & Kendali Irigasi Otomatis</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- Bagian Monitoring Grafik -->
+            <section class="section-title">
+                <h2>📈 Grafik Pemantauan Real-Time</h2>
+            </section>
+            
+            <section class="charts-section">
+                <div class="card chart-card">
+                    <h3>Suhu Udara (°C)</h3>
+                    <div class="current-val">Saat ini: <span id="txtSuhu">--</span> °C</div>
+                    <canvas id="chartSuhu"></canvas>
+                </div>
+                <div class="card chart-card">
+                    <h3>Kelembapan Udara (%)</h3>
+                    <div class="current-val">Saat ini: <span id="txtHum">--</span> %</div>
+                    <canvas id="chartHum"></canvas>
+                </div>
+                <div class="card chart-card">
+                    <h3>Kelembapan Tanah (%)</h3>
+                    <div class="current-val">Saat ini: <span id="txtSoil">--</span> %</div>
+                    <canvas id="chartSoil"></canvas>
+                </div>
+            </section>
+
+            <!-- Bagian Kendali Aktuator -->
+            <section class="section-title">
+                <h2>⚙️ Panel Kendali Aktuator</h2>
+            </section>
+
+            <section class="actuators-section">
+                <div class="card actuator-card">
+                    <h3>Kipas</h3>
+                    <div class="status" id="statusFan">Status: OFF</div>
+                    <button id="btnFan" class="btn btn-off" onclick="toggleFan()">Nyalakan Kipas</button>
+                </div>
+                <div class="card actuator-card">
+                    <h3>Pompa</h3>
+                    <div class="status" id="statusPump">Status: OFF</div>
+                    <button id="btnPump" class="btn btn-off" onclick="togglePump()">Nyalakan Pompa</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Sistem IoT Agroteknologi Berbasis ESP32 & Local Network</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
