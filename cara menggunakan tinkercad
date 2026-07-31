@@ -1,0 +1,29 @@
+Karena Tinkercad memiliki keterbatasan format file, berikut adalah trik dan alur kerja tercepat untuk melakukannya:
+1. Ekspor Model 3D dari KiCad
+Tinkercad tidak bisa membaca file mentah KiCad, jadi kita harus mengekspornya menjadi format model 3D umum.
+• Di halaman KiCad PCB Editor, klik menu File > Export > STEP...
+• Biarkan pengaturannya default (pastikan koordinat origin-nya sesuai), lalu klik tombol Export. Anda akan mendapatkan file berakhiran .step (atau .stp). File ini menyimpan seluruh bentuk fisik papan dan komponen yang ada di atasnya.
+2. Konversi File ke STL (Syarat Masuk Tinkercad)
+Tinkercad hanya menerima file model 3D berformat .stl atau .obj.
+• Buka peramban (browser) Anda dan gunakan alat konversi online gratis. Anda bisa mencari di Google dengan kata kunci "STEP to STL converter" (seperti AnyConv, MiConv, atau Makexyz).
+• Unggah file .step dari KiCad tadi, proses konversinya, lalu unduh hasilnya yang sudah berubah menjadi file .stl.
+3. Impor ke Tinkercad dan Jadikan "Pencetak Lubang"
+Sekarang kita mulai mendesain di software Tinkercad.
+• Buat 3D Design baru.
+• Klik tombol Import di sudut kanan atas layar, lalu masukkan file .stl PCB Anda. Skalanya biasanya akan terbaca 100% dengan ukuran milimeter yang akurat.
+• Setelah wujud PCB Anda muncul di area kerja, klik PCB tersebut. Pada menu Properties kecil yang melayang di kanan atas, ubah tipenya dari Solid (berwarna) menjadi Hole (kotak abu-abu bergaris/transparan).
+4. Cetak Rongga Casing (Teknik Subtraktif)
+Alih-alih membuat dinding satu per satu, cara termudah membuat casing adalah dengan "melubangi" sebuah balok padat menggunakan model PCB Anda:
+• Tarik bangun Box (kotak padat) dari menu kanan ke area kerja.
+• Tarik ujung-ujungnya untuk mengatur ukurannya. Buat ukurannya sedikit lebih panjang, lebar, dan tinggi dari model PCB Anda. Berikan margin/toleransi sekitar 1 mm hingga 2 mm di setiap sisi luar PCB agar saat di-print nanti PCB Anda tidak terlalu sesak atau macet saat dimasukkan.
+• Geser model PCB Anda yang sudah berbentuk Hole tadi, dan telan/masukkan persis di dalam tubuh kotak Box padat tersebut.
+• Posisikan ketinggiannya agar pas di tengah.
+5. Gabungkan (Group)
+• Blok (seleksi) kedua benda tersebut (Box padat dan PCB Hole).
+• Klik ikon Group (atau tekan Ctrl + G) di menu atas.
+• Selesai! Saat digabungkan, balok padat tersebut akan berongga di bagian dalamnya persis mengikuti wujud PCB dan benjolan-benjolan komponen Anda.
+Langkah Tambahan Penyelesaian:
+Karena casing tersebut sekarang masih tertutup rapat sepenuhnya dengan rongga di tengah, Anda perlu melakukan pemolesan akhir:
+1.	Potong Jadi Dua: Gunakan bangun kotak transparan (Hole) berukuran besar untuk memotong balok casing tadi secara horizontal persis di tengahnya. Pisahkan menjadi bagian wadah bawah (bottom case) dan tutup atas (lid).
+2.	Buat Lubang Kabel/Konektor: Tambahkan kotak/tabung transparan (Hole) kecil di pinggiran casing untuk menembus dinding di tempat konektor 4-pin (VCC, GND) dan letak probe sensor berada, agar kabel bisa tersambung ke luar casing.
+3.	Ekspor untuk Print: Pilih casing Anda, klik Export > STL, dan masukkan ke slicer printer 3D Anda (seperti UltiMaker Cura atau PrusaSlicer).

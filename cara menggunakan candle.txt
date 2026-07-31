@@ -1,0 +1,36 @@
+Candle adalah software pengontrol (G-Code sender) yang bertugas mengirimkan instruksi dari file .nc Anda ke mesin CNC (biasanya mesin berbasis GRBL seperti CNC 3018).
+Berikut adalah panduan langkah demi langkah cara menggunakan Candle untuk mencetak PCB Anda:
+1. Persiapan & Koneksi Mesin
+1.	Colokkan kabel USB mesin CNC ke komputer Anda dan nyalakan power supply mesin.
+2.	Buka software Candle.
+3.	Perhatikan panel Status di sebelah kanan. Jika tulisannya Idle (berwarna hijau), berarti mesin sudah terhubung.
+4.	Jika tulisannya "Not Connected": Buka menu Service > Settings. Pada bagian Connection, pilih Port (COM yang sesuai dengan CNC Anda) dan pastikan Baud diset ke 115200. Klik OK.
+2. Memuat File Pertama (Jalur Tembaga)
+Selalu mulai dengan mengukir jalur tembaga (Isolation Routing) sebelum mengebor atau memotong papan.
+1.	Pasang mata pisau ukir (V-Bit) ke spindle CNC Anda dan kencangkan.
+2.	Di Candle, buka File > Open, lalu pilih file G-Code jalur tembaga Anda (misalnya jalur_tembaga.nc).
+3.	Anda akan melihat gambar visual rute pergerakan mesin di layar tengah.
+3. Menentukan Titik Nol (Zero Point) - Sangat Krusial
+Mesin CNC perlu tahu di mana tepatnya posisi ujung papan PCB Anda berada.
+1.	Gunakan tombol panah di panel Jog (di sebelah kanan bawah) untuk menggeser sumbu X dan Y. Posisikan mata pisau tepat di pojok kiri bawah papan PCB tembaga Anda.
+2.	Turunkan sumbu Z secara perlahan (ubah nilai Step menjadi 0.1 atau 0.01 agar turunnya tidak terlalu drastis).
+3.	Metode Kertas: Letakkan selembar kertas tipis di antara mata pisau dan PCB. Turunkan sumbu Z sedikit demi sedikit sambil menarik-narik kertas tersebut. Saat kertas terasa seret/tertahan oleh mata pisau, hentikan.
+4.	Di panel State sebelah kanan atas, klik tombol Zero XY dan Zero Z.
+5.	Koordinat Work untuk X, Y, dan Z akan berubah menjadi 0.000. Mesin sekarang tahu bahwa titik tersebut adalah titik mula (0,0,0).
+4. Membuat Heightmap (Pemetaan Ketinggian)
+Permukaan PCB tembaga tidak pernah benar-benar rata. Karena Anda mengukir dengan kedalaman hanya 0,1 mm, kemiringan sedikit saja akan membuat pisau tidak menyentuh tembaga atau malah memotong terlalu dalam.
+1.	Buka kotak centang Heightmap di bagian bawah layar.
+2.	Klik tombol Create. Pengaturan area biasanya akan terisi otomatis mengikuti ukuran sirkuit Anda.
+3.	Klik tombol Probe. Mesin akan bergerak otomatis menempelkan pisau ke beberapa titik di atas PCB untuk mengukur tingkat kemiringan papan.
+4.	Setelah selesai, pastikan Anda mencentang kotak "Use heightmap". Candle kini akan menyesuaikan kedalaman pisau secara otomatis mengikuti kontur papan yang miring.
+5. Mulai Proses Milling
+1.	Angkat sumbu Z sedikit agar aman.
+2.	Klik tombol Send (ikon panah ke bawah) di panel atas.
+3.	Spindle akan berputar dan mesin mulai mengukir jalur PCB Anda. Tunggu hingga prosesnya mencapai 100%.
+6. Proses Lanjutan (Bor dan Potong Tepi)
+Setelah jalur tembaga selesai, Anda harus melanjutkan ke file berikutnya. Aturannya sangat ketat:
+1.	Bersihkan serpihan tembaga dari papan.
+2.	Naikkan sumbu Z yang tinggi, lalu ganti mata pisau dengan mata bor.
+3.	PENTING: Anda hanya boleh mengatur ulang sumbu Z (turunkan bor sampai menyentuh papan, lalu klik Zero Z). JANGAN PERNAH MENEKAN TOMBOL "Zero XY" LAGI. Jika ditekan, posisi lubang bor Anda akan meleset dari jalur tembaganya.
+4.	Buka file .drl (lubang bor), dan klik Send.
+5.	Ulangi langkah yang sama untuk proses pemotongan tepi (Cutout): Ganti ke mata pisau Endmill, atur ulang Zero Z, buka file cutout, dan klik Send.

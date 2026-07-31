@@ -1,0 +1,37 @@
+1. Masukkan (Import) File ke FlatCAM
+• Buka FlatCAM.
+• Pilih menu File > Open Gerber, lalu pilih file F.Cu.gbr (Jalur tembaga) dan Edge.Cuts.gbr (Garis tepi).
+• Pilih menu File > Open Excellon, lalu pilih file bor Anda yang berakhiran .drl.
+• Sekarang di tab Project (sebelah kiri), Anda akan melihat ketiga file tersebut.
+2. Isolation Routing (Mengukir Jalur Tembaga)
+Tujuannya adalah mengikis tembaga di luar jalur merah agar jalur tersebut tidak saling bersentuhan (korslet).
+1.	Di tab Project, klik dua kali pada file F.Cu.gbr. Menu akan berpindah ke tab Selected.
+2.	Cari bagian Isolation Routing.
+3.	Pada kolom Tool dia (Diameter pisau), masukkan ukuran ujung pisau ukir Anda (V-Bit), misalnya 0.1 atau 0.2 mm.
+4.	Klik tombol Generate Geometry. Muncul objek baru (biasanya warna merah) dengan nama berakhiran _iso.
+5.	Kembali ke tab Project, klik dua kali pada file ..._iso tersebut.
+6.	Atur kedalaman pahatan:
+• Cut Z: Kedalaman ukiran (misal -0.1 mm. Jangan terlalu dalam agar ujung mata pisau tidak cepat patah).
+• Travel Z: Ketinggian aman pisau saat berpindah tempat (misal 2.0 mm).
+• Feed Rate: Kecepatan gerak mesin (sesuaikan dengan mesin Anda, misal 100 atau 150 mm/menit).
+7.	Klik Generate CNC Job. Akan muncul file baru lagi dengan nama berakhiran _cnc. Ini adalah G-Code yang sudah jadi.
+3. Drilling (Melubangi Kaki Komponen)
+1.	Di tab Project, klik dua kali pada file .drl (Excellon).
+2.	Pilih mata bor di daftar tabel (biasanya untuk lubang komponen standar adalah 0.8 mm atau 1.0 mm). Anda bisa menyeleksi semua lubang jika ingin dibor dengan mata bor yang sama.
+3.	Atur parameternya:
+• Cut Z: Kedalaman bor. Karena PCB standar tebalnya 1.6mm, atur agar tembus, misalnya -1.8 mm atau -2.0 mm.
+• Travel Z: Ketinggian aman (misal 2.0 mm).
+4.	Klik Generate CNC Job. Anda akan mendapat file G-Code baru (berakhiran _cnc) untuk proses pengeboran.
+4. Board Cutout (Memotong Papan)
+1.	Di tab Project, klik dua kali pada file Edge.Cuts.gbr.
+2.	Cari bagian Board cutout.
+3.	Atur parameternya:
+• Tool dia: Diameter pisau pemotong (Endmill), misalnya 2.0 mm atau 3.0 mm.
+• Margin: Jarak dari garis. (Isi 0 agar dipotong pas di garis tepi kuning).
+• Gap size: Ini untuk membuat "jembatan" kecil agar PCB tidak langsung terlempar saat selesai dipotong. (Bisa diisi 1.0 mm).
+4.	Klik Generate Geometry, lalu klik file geometri luarnya, atur Cut Z menjadi tembus (misal -1.8 mm) dan klik Generate CNC Job.
+5. Simpan (Export) G-Code
+Langkah terakhir adalah menyimpan ketiga file CNC tersebut.
+1.	Di tab Project, klik file yang berakhiran _cnc (Satu per satu).
+2.	Di tab Selected, cari tombol Save CNC Code.
+3.	Simpan file tersebut di folder Anda dengan tambahan ekstensi .nc atau .gcode (contoh: jalur_tembaga.nc, lubang_bor.nc, potong_tepi.nc).

@@ -1,0 +1,29 @@
+Daftar Footprint Komponen
+• 1 & 2. C1, C2 (Kapasitor Keramik)
+• Library: Capacitor_THT
+• Footprint: C_Disc_D5.0mm_W2.5mm_P5.00mm
+• Penjelasan: Ini adalah ukuran standar untuk kapasitor keramik bulat pipih (biasanya bernilai 104 atau 100nF) dengan jarak antar kaki 5 mm.
+• 3 & 4. D1, D2 (LED Indikator)
+• Library: LED_THT
+• Footprint: LED_D3.0mm (Untuk LED ukuran 3mm) atau LED_D5.0mm (Untuk ukuran 5mm).
+• Penjelasan: Pada modul sensor mungil, LED 3mm lebih sering digunakan agar menghemat tempat di PCB.
+• 5. J1 (Konektor Output 4-Pin)
+• Library: Connector_PinHeader_2.54mm
+• Footprint: PinHeader_1x04_P2.54mm_Vertical
+• Penjelasan: Ini adalah pin jantan (male header) standar dengan jarak antar pin 2.54 mm. Pilih versi _Horizontal jika ingin pinnya menghadap ke samping.
+• 6. J3 (Konektor Probe 2-Pin)
+• Library: Connector_PinHeader_2.54mm
+• Footprint: PinHeader_1x02_P2.54mm_Vertical
+• Penjelasan: Sama seperti J1, namun ini untuk menyambungkan dua kabel/lempengan ke tanah.
+• 7, 8, & 9. R1, R2, R3 (Resistor 1/4 Watt)
+• Library: Resistor_THT
+• Footprint: R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+• Penjelasan: Ini adalah ukuran standar untuk resistor gelang warna (1/4W) yang disolder secara horizontal/terbaring. Jarak lubangnya (10.16 mm) memberikan ruang yang pas untuk menekuk kaki resistor.
+• 10. RV1 (Potensiometer/Trimpot)
+• Library: Potentiometer_THT
+• Footprint: Potentiometer_Runtron_RM065-V5_Vertical
+• Penjelasan: Trimpot RM065 adalah trimpot bundar kecil (biasanya warna putih/putih-biru) yang paling sering ditemukan di pasaran untuk modul sensor. Jika Anda menggunakan trimpot kotak biru (tipe multiturn), gunakan footprint Potentiometer_Bourns_3296W_Vertical.
+• 11. U1 (IC Komparator LM393)
+• Library: Package_DIP
+• Footprint: DIP-8_W7.62mm
+• Penjelasan: Ini adalah paket Dual In-line Package (DIP) standar berisi 8 pin. Sangat disarankan untuk menggunakan Socket IC 8-pin saat menyolder, dan footprint ini sudah sesuai untuk socket tersebut.

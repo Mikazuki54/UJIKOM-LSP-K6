@@ -1,0 +1,25 @@
+1. Buat Garis Tepi Papan (Edge Cuts)
+Sebelum mengekspor, mesin CNC harus tahu di mana batas potongan akhir PCB Anda.
+• Pindah ke layer Edge.Cuts (warna kuning/oranye) pada panel layer di sebelah kanan.
+• Pilih tool Draw a rectangle atau Draw a graphic line di toolbar kanan.
+• Gambar kotak yang mengelilingi seluruh rangkaian komponen Anda. Ini akan menjadi batas fisik PCB yang akan dipotong oleh mesin CNC.
+2. Plot File Gerber
+File Gerber berisi instruksi grafis dua dimensi untuk mesin CNC mengenai area mana yang ada tembaganya.
+• Di menu bagian atas PCB Editor, pilih File > Fabrication Outputs > Gerbers (.gbr)...
+• Akan muncul jendela Plot. Perhatikan bagian Included Layers di sisi kiri.
+• Centang HANYA layer berikut ini (hapus centang pada layer lain untuk menghindari kebingungan di FlatCAM):
+• F.Cu (Ini adalah jalur tembaga Anda)
+• Edge.Cuts (Ini adalah garis potong PCB Anda)
+• Tentukan folder penyimpanan di bagian Output directory agar file mudah dicari.
+• Klik tombol Plot di bagian bawah jendela.
+3. Generate File Drill (Mata Bor)
+File Drill (biasanya berformat .drl) berfungsi memberi tahu CNC koordinat dan ukuran lubang untuk kaki-kaki komponen.
+• Jangan tutup jendela Plot tadi. Langsung klik tombol Generate Drill Files... di bagian kanan bawah.
+• Pada jendela yang baru terbuka, pastikan formatnya menggunakan standar Excellon (biasanya ini sudah otomatis terpilih).
+• Klik tombol Generate Drill File.
+• Klik Close untuk menutup semua jendela ekspor KiCad.
+4. Impor ke FlatCAM
+Sekarang Anda sudah memiliki file yang dibutuhkan dan siap diproses di FlatCAM.
+• Buka software FlatCAM.
+• Untuk memasukkan jalur tembaga dan garis potong: Buka menu File > Open Gerber... lalu pilih file F.Cu.gbr dan Edge.Cuts.gbr yang baru saja Anda buat.
+• Untuk memasukkan titik pengeboran: Buka menu File > Open Excellon... lalu pilih file berakhiran .drl (misalnya nama_project.drl).
