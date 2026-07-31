@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #e8f5e9; /* Hijau sangat muda (warna latar) */
+    background-color: #e8f5e9; 
     color: #2e3d32;
     padding: 20px;
 }
@@ -16,7 +16,6 @@ body {
     margin: 0 auto;
 }
 
-/* Header Tema Agroteknologi */
 header {
     background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
     color: white;
@@ -25,23 +24,12 @@ header {
     margin-bottom: 30px;
     text-align: center;
     box-shadow: 0 8px 15px rgba(46, 125, 50, 0.2);
-    border-bottom: 5px solid #8d6e63; /* Aksen coklat tanah */
+    border-bottom: 5px solid #8d6e63; 
 }
 
-header h1 { 
-    font-size: 2.5rem; 
-    margin-bottom: 8px; 
-    letter-spacing: 1px;
-}
-
-header h1 span {
-    color: #aed581; /* Hijau pucat untuk penekanan */
-}
-
-header p { 
-    font-size: 1.1rem; 
-    color: #e8f5e9; 
-}
+header h1 { font-size: 2.5rem; margin-bottom: 8px; letter-spacing: 1px; }
+header h1 span { color: #aed581; }
+header p { font-size: 1.1rem; color: #e8f5e9; }
 
 .section-title h2 {
     font-size: 1.5rem;
@@ -51,7 +39,6 @@ header p {
     padding-left: 10px;
 }
 
-/* Tata Letak Kartu */
 .charts-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -75,22 +62,9 @@ header p {
     transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.chart-card h3 {
-    color: #388e3c;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-}
-
-.current-val {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 15px;
-}
+.card:hover { transform: translateY(-5px); }
+.chart-card h3 { color: #388e3c; margin-bottom: 5px; font-size: 1.2rem; }
+.current-val { font-size: 1.1rem; font-weight: bold; color: #555; margin-bottom: 15px; }
 
 .actuator-card {
     flex: 1;
@@ -100,20 +74,9 @@ header p {
     border-top: 4px solid #8d6e63;
 }
 
-.actuator-card h3 {
-    font-size: 1.3rem;
-    color: #4e342e;
-    margin-bottom: 10px;
-}
+.actuator-card h3 { font-size: 1.3rem; color: #4e342e; margin-bottom: 10px; }
+.status { margin-bottom: 20px; font-size: 1.1rem; font-weight: bold; color: #666; }
 
-.status {
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #666;
-}
-
-/* Desain Tombol */
 .btn {
     padding: 14px 20px;
     border: none;

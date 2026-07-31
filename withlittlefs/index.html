@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Monitoring</title>
+    <title>Smart Agroteknologi - UG MURO</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Memuat Library Chart.js untuk Grafik -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="header-titles">
-                <h1>Smart Agroteknologi</h1>
+                <h1>Smart Agroteknologi <span>UG MURO</span></h1>
                 <p>Sistem Monitoring Pertanian Cerdas & Kendali Irigasi Otomatis</p>
             </div>
         </header>
@@ -48,12 +47,12 @@
 
             <section class="actuators-section">
                 <div class="card actuator-card">
-                    <h3>Kipas</h3>
+                    <h3>Kipas Sirkulasi (Relay 1)</h3>
                     <div class="status" id="statusFan">Status: OFF</div>
                     <button id="btnFan" class="btn btn-off" onclick="toggleFan()">Nyalakan Kipas</button>
                 </div>
                 <div class="card actuator-card">
-                    <h3>Pompa</h3>
+                    <h3>Pompa Irigasi (Relay 3)</h3>
                     <div class="status" id="statusPump">Status: OFF</div>
                     <button id="btnPump" class="btn btn-off" onclick="togglePump()">Nyalakan Pompa</button>
                 </div>
@@ -61,7 +60,7 @@
         </main>
         
         <footer>
-            <p>Sistem IoT Agroteknologi Berbasis ESP32 & Local Network</p>
+            <p>Sistem IoT Agroteknologi Berbasis ESP32 & LittleFS</p>
         </footer>
     </div>
     
